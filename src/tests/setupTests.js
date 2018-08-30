@@ -5,3 +5,4 @@ Enzyme.configure({
   adapter: new Adapter()
 });
 
+require('dotenv').config({ path: 'env.test' });
