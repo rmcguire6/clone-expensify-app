@@ -1,24 +1,24 @@
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 
 //config not included because it contains the API key for real database config = {};
 
 
-firebase.initializeApp(config);
+//firebase.initializeApp(config);
 
-const database = firebase.database();
+//const database = firebase.database();
 
 //child_removed
-database.ref('expenses').on('child_removed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-})
-//child_changed
-database.ref('expenses').on('child_changed', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-})
-//child_added
-database.ref('expenses').on('child_added', (snapshot) => {
-  console.log(snapshot.key, snapshot.val());
-})
+// database.ref('expenses').on('child_removed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// })
+// //child_changed
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// })
+// //child_added
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// })
 // database.ref('expenses')
 //   .once('value')
 //   .then((snapshot) => {
@@ -47,13 +47,13 @@ database.ref('expenses').on('child_added', (snapshot) => {
 // database.ref('expenses/-LKc5nbD1tYiWwmAJp35').update({
 //   'amount': '1019'
 // })
-const now = 567777;
-database.ref('expenses').push({
-  description: 'Cell phone bill',
-  note: '',
-  amount: '2500',
-  createdAt: now
-})
+// const now = 567777;
+// database.ref('expenses').push({
+//   description: 'Cell phone bill',
+//   note: '',
+//   amount: '2500',
+//   createdAt: now
+// })
 
 // database.ref('notes').push({
 //   title: 'To Do',

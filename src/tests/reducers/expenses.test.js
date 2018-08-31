@@ -1,6 +1,9 @@
 import expensesReducer from '../../reducers/expenses'
 import expenses from '../fixtures/expenses';
 import moment from 'moment';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import database from '../../firebase/firebase'
 
 test('should set default state', () => {
   const state = expensesReducer(undefined, { type: '@@INIT' });
@@ -45,10 +48,22 @@ test('should edit expense by id', () => {
   expect(state).toEqual([editedExpense, expenses[1], expenses[2]]);
 });
 test('should not edit expense if id not found', () => {
+
   const action = {
     type: 'EDIT_EXPENSE',
     id: '-1'
   };
   const state = expensesReducer(expenses, action);
   expect(state).toEqual(expenses);
+});
+
+test('should set expenses', () => {
+  const newExpenses = [{ description: "new expense", amount: "9876", createdAt: moment().add(9, 'days').valueOf() }, { description: "newer expense", amount: "5432", createdAt: moment().add(3, 'days').valueOf() }];
+  const action = {
+    type: 'SET_EXPENSES',
+    expenses: newExpenses
+  };
+
+  const state = expensesReducer(expenses, action);
+  expect(state).toEqual(newExpenses);
 });
