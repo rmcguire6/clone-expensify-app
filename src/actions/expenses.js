@@ -1,6 +1,5 @@
 import uuid from 'uuid';
 import database from '../firebase/firebase';
-import { SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION } from 'constants';
 
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
