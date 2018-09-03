@@ -130,3 +130,8 @@
 //   'job/title': 'Software Team Lead',
 //   'location/city': 'Portland, WA'
 // })
+//  database.ref('isSingle').remove().then(() => {
+//   console.log('Data was removed')
+// }).catch((e) => {
+//   console.log('Data was not removed', e)
+// })
